@@ -1,0 +1,20 @@
+extends base
+
+block head
+  - var title = 'Login'
+
+block body
+
+  form(method="post")
+    .login-block
+      h1 Login
+      p#register_error #{error}
+
+      input(type="hidden", name="_csrf", value=csrfToken)
+      input#email(type="email", name="email", required=true, placeholder='Email')
+      input#password(type="password", name="password", required=true, placeholder='Password')
+      input(type="submit" id="login" value="login")
+
+
+
+

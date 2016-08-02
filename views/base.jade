@@ -1,0 +1,35 @@
+
+doctype html
+html
+  head
+    block head
+    title #{title}
+
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+
+  body
+    header
+      ul#header
+        li
+          a(href='/') Home
+        li
+          a(href='/lobby') Lobby
+        if user
+          li#user_menu
+            a(href='/logout') Logout
+          li#user_menu
+            a(href='/profile') #{user.username}
+        else
+          li#user_menu
+            a(href='/login') Login
+          li#user_menu
+            a(href='/register') Register
+
+    noscript
+      p#jsonly We're sorry, but General doesn't work properly without JavaScript enabled. Please enable it
+
+    block body
+
+    block footer
+    footer Powered by General

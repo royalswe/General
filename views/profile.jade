@@ -1,0 +1,17 @@
+extends base
+
+block head
+  - var title = 'Profile'
+
+block body
+  .profile
+    .head
+    .body
+  div#user_profile
+    ul#profile
+      li Username
+      li #{user.username}
+      li Email
+      li #{user.email}
+      li Score
+      li #{user.points}

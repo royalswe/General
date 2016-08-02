@@ -1,0 +1,22 @@
+extends base
+
+block head
+  - var title = 'Register'
+
+block body
+
+  form(method="post")
+    .login-block
+      h1 Register
+      p#register_error #{error}
+
+      input(type="hidden", name="_csrf", value=csrfToken)
+      input#username(type='text', name="username", required=true, maxlength="16", minlength="2" placeholder='Username')
+      input#email(type="email", name="email", required=true, placeholder='Email')
+      input#password(type="password", name="password", minlength="4", required=true, placeholder='Password')
+      input#password(type="password", name="confirmpassword", required=true, placeholder='Confirm password')
+      input(type="submit" id="register" value="register")
+
+    script(src='js/validation.js')
+
+
